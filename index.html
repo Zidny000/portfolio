@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="./style/style.css">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+ <div id="content">
+ <div id="side-content">
+  
+   <div class="img">
+    <img src="./assets/img/profile.jpg" alt="">
+   </div>
+   <h5><span>Zidny</span> Talukdar</h5>
+   <p>Web Developer</p>
+   <div class="icons"> 
+    <span><i class="fab fa-facebook"></i></i></span>
+    <span><i class="fab fa-twitter"></i></i></span>
+   </div>
+  
+  <div class="links">
+   <ul>
+    <li><i class="far fa-envelope"></i> &nbsp; t.m.zidny@gmail.com</li>
+    <li><i class="fas fa-map-marker-alt"> &nbsp; Banglades,Dhaka</i></li>
+    <li> <a href="https://github.com/Zidny000?tab=repositories"><i class="fab fa-github"></i> &nbsp;Github</a></li>
+   </ul>
+  </div>
+
+  
+ </div>
+ <!-- Main-Content -->
+ <div id="main-content" id="content">
+  <div  v-show="saw">
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" >About me </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <p class="nav-item nav-link" :style="{color:aboutc}" v-on:click="about">About <span class="sr-only">(current)</span></p>
+          <p class="nav-item nav-link"  v-on:click="portfolio">Portfolio</p>
+          <p class="nav-item nav-link"  v-on:click="resume">Resume</p>
+          
+        </div>
+      </div>
+     </nav>
+   <div class="about">
+     <div class="title">
+       <h4>About me</h4>
+       <i class="fas fa-arrow-alt-circle-left" v-on:mouseover="pera" v-on:mouseleave="nopera">
+
+        <span class="menue">
+
+          <span v-on:click="about">{{abo}}</span>
+          <span v-on:click="portfolio">{{port}}</span>
+          <span v-on:click="resume">{{res}}</span>
+        
+        </span> 
+
+        
+      </i>
+
+      
+     </div>
+     <hr>
+     
+     
+    
+    
+    <p>I dedicated my self as someone who's persistant, a quick learner and loves problem solving by using simple and scalable solutions </p>
+   </div>
+
+   
+   <div class="descript">
+    <h5 >What I'm doing</h5>
+    <div class="description_details" >
+      <div >
+        <i class="fas fa-laptop-code"></i>  
+        <p><span>Web development<br></span>Able to crate beautiful sites by using <b>HTML.CSS</b></p>
+      </div>
+      <div >
+        <i class="fas fa-mobile-alt"></i>  
+        <p><span>Responsive design<br></span>Able to crate mobile responsive sites as a professional level</p>
+      </div>
+      <div >
+        <i class="fas fa-crop-alt"></i>  
+        <p><span>Laravel<br></span>Able to create complete sites using laravel framework</p>
+      </div>
+      <div >
+        <i class="fas fa-headset"></i>
+        <p><span>Strong support<br></span>Able to communicate ideas in a brief way</p>
+      </div>
+     
+      
+    </div>
+   </div>
+   </div>
+
+  
+
+
+
+
+
+  <div class="portfolio" v-show='seen'>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" >Portfolio </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <p class="nav-item nav-link " v-on:click="about">About <span class="sr-only">(current)</span></p>
+          <p class="nav-item nav-link " :style="{color:portc}"  v-on:click="portfolio">Portfolio</p>
+          <p class="nav-item nav-link"  v-on:click="resume">Resume</p>
+          
+        </div>
+      </div>
+     </nav>
+   <div class="about">
+      <div class="title">
+        <h4>Portfolio</h4>
+        <i class="fas fa-arrow-alt-circle-left" v-on:mouseover="pera" v-on:mouseleave="nopera">
+
+          <span class="menue">
+
+            <span v-on:click="about">{{abo}}</span>
+            <span v-on:click="portfolio">{{port}}</span>
+            <span v-on:click="resume">{{res}}</span>
+            
+          
+          </span> 
+        </i>
+      </div>
+      
+      <hr>
+      <nav>
+        <p v-on:click="front" :style={color:color}>Front-end</p>
+        <p v-on:click="back" :style={color:colors}>Back-end</p>
+      </nav>
+    </div>
+    <div class="description" v-show="shows">
+
+      <div class="port_img">
+        <a href="https://zidny000.github.io/front-Blog/"><img src="./assets/img/Screenshot (96).png" alt=""></a>
+        <p>Blog site</p>
+      </div>
+      <div class="port_img">
+        <a href="https://zidny000.github.io/front-Books/"><img src="./assets/img/Screenshot (94).png" alt=""></a>
+        <p>Book store</p>
+      </div>
+      <div class="port_img">
+        <a href="https://zidny000.github.io/front-MobileShop/"><img src="./assets/img/Screenshot (95).png" alt=""></a>
+        <p>E-commerce</p>
+      </div>
+      <div class="port_img">
+        <a href="https://zidny000.github.io/front-Buisness/"><img src="./assets/img/Screenshot (97).png" alt=""></a>
+        <p>Buisness</p>
+      </div>
+     
+    </div>
+
+    <div class="description" v-show="shown">
+
+      <div class="port_img">
+        <img src="./assets/img/Screenshot (98).png" alt="">
+        <p>github code</p>
+      </div>
+      
+     
+    </div>
+  </div> 
+
+
+
+
+  <div class="resume" v-show="see" >
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" >Resume </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <p class="nav-item nav-link " v-on:click="about">About <span class="sr-only">(current)</span></p>
+          <p class="nav-item nav-link"  v-on:click="portfolio">Portfolio</p>
+          <p class="nav-item nav-link" :style="{color:resc}" v-on:click="resume">Resume</p>
+          
+        </div>
+      </div>
+     </nav>
+    <div class="about us">
+      <div class="title" id="title-vue">
+        <h4>Resume</h4>
+    
+        <i class="fas fa-arrow-alt-circle-left" v-on:mouseover="pera" v-on:mouseleave="nopera">
+
+          <span class="menue">
+
+            <span v-on:click="about">{{abo}}</span>
+            <span v-on:click="portfolio">{{port}}</span>
+            <span v-on:click="resume">{{res}}</span>
+            
+          
+          </span> 
+        </i>
+          
+
+        
+      </div>
+      
+      <hr>
+      
+    </div>
+
+    <div class="experience">
+      <h6><i class="fas fa-toolbox"></i>Experiance</h6>
+
+      <div class="ex-description">
+        <h5>Freelancing</h5>
+        <h6>2018-2020</h6>
+
+        <p>I am currently doing freelance work and continuing to prepare myself for upcoming opportunies.</p>
+      </div>
+
+      <div class="skills">
+        <h5>Coding Skills</h5>
+
+        <div class="skill-limit">
+          <div>
+            <small>Html</small>
+            <small>95%</small>
+          </div>
+         
+        </div>
+        <div class="skill-limit">
+          <div>
+            <small>Css</small>
+            <small>90%</small>
+          </div>
+         
+        </div>
+        <div class="skill-limit">
+          <div>
+            <small>js</small>
+            <small>70%</small>
+          </div>
+         
+        </div>
+        <div class="skill-limit">
+          <div>
+            <small>php</small>
+            <small>60%</small>
+          </div>
+         
+        </div>
+        <div class="skill-limit">
+          <div>
+            <small>laravel</small>
+            <small>70%</small>
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+
+  </div>  
+
+
+
+
+ </div>
+
+</div>
+
+
+<script src="./style/app.vue"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
